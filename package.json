@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "setup": "bash scripts/setup.sh",
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "node init && vite",
+    "build": "node init && tsc && vite build",
     "preview": "vite preview",
     "server": "tsx server/index.ts",
     "mcp": "tsx mcp-server/index.ts",
-    "dev:all": "concurrently \"npm run server\" \"npm run dev\"",
+    "dev:all": "node init && concurrently \"npm run server\" \"npm run dev\"",
     "test:search": "tsx scripts/test-search.ts",
     "test:suggestions": "tsx scripts/test-search.ts \"Stellar blockchain\" --count 3",
     "deploy": "npm run build && vercel --prod"
@@ -34,7 +34,7 @@
     "lucide-react": "^0.344.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sonner": "^2.0.7"
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
@@ -57,4 +57,3 @@
     ]
   }
 }
-
